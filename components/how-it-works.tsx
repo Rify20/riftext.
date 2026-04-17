@@ -2,17 +2,17 @@ const steps = [
   {
     no: "01",
     title: "Upload",
-    desc: "Choose a JPG, PNG, or WebP image from your device.",
+    desc: "Pilih file JPG, PNG, atau WebP dari perangkatmu.",
   },
   {
     no: "02",
     title: "Scan",
-    desc: "RifText processes the image and extracts visible text.",
+    desc: "RifText memproses gambar dan mengambil teks yang terlihat.",
   },
   {
     no: "03",
-    title: "Copy",
-    desc: "Edit the output, then copy or download it instantly.",
+    title: "Salin",
+    desc: "Edit hasilnya, lalu salin atau unduh secara instan.",
   },
 ];
 
@@ -20,9 +20,9 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-14 sm:py-20">
       <div className="container-shell">
-        <h2 className="section-title">How it works</h2>
+        <h2 className="section-title">Cara kerja</h2>
         <p className="section-desc">
-          A minimal workflow designed to feel fast, clear, and practical.
+          Alur minimal yang dibuat supaya terasa cepat, jelas, dan praktis.
         </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
