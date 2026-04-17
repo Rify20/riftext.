@@ -14,7 +14,7 @@ export default function Footer() {
 
         <div className="flex items-center gap-5 text-sm text-slate-500">
           <a
-            href="https://github.com/Rify20"
+            href=
             target="_blank"
             rel="noreferrer"
             className="transition hover:text-blue-600"
