@@ -4,28 +4,35 @@ export default function Footer() {
       <div className="container-shell flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
         <div>
           <p className="text-lg font-bold tracking-tight text-slate-900">RifText</p>
+
           <p className="mt-1 text-sm text-slate-600">
-            Extract text from images, instantly. Built by <span className="font-semibold text-blue-700">RifDev</span>.
+            Extract text from images instantly.
+          </p>
+
+          <p className="mt-1 text-sm text-slate-600">
+            Built by <span className="font-semibold text-blue-700">RifDev</span>
           </p>
         </div>
 
         <div className="flex items-center gap-5 text-sm text-slate-500">
           <a
-            href="https://github.com/"
+            href="https://github.com/Rify20"
             target="_blank"
             rel="noreferrer"
             className="transition hover:text-blue-600"
           >
             GitHub
           </a>
+
           <a
-            href="https://vercel.com/"
+            href="https://www.instagram.com/rifdev_/"
             target="_blank"
             rel="noreferrer"
-            className="transition hover:text-blue-600"
+            className="transition hover:text-pink-500"
           >
-            Vercel
+            Instagram
           </a>
+
           <span>© 2026 RifDev</span>
         </div>
       </div>
