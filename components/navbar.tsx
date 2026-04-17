@@ -28,7 +28,6 @@ export default function Navbar() {
             rel="noreferrer"
             className="text-sm text-slate-600 transition hover:text-blue-600"
           >
-            GitHub
           </a>
 
           <a
