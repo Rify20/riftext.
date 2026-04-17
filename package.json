@@ -5,21 +5,20 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "next": "16.2.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
     "tesseract.js": "^5.1.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.4",
-    "@types/node": "^22.14.0",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
+    "@types/node": "^24.7.2",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
     "tailwindcss": "^4.1.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   }
 }
