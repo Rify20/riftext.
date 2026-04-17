@@ -10,7 +10,7 @@ export default function OCRWorkspace() {
   const [imageUrl, setImageUrl] = useState<string>("");
   const [resultText, setResultText] = useState("");
   const [status, setStatus] = useState<ScanStatus>("idle");
-  const [message, setMessage] = useState("Upload an image to get started.");
+  const [message, setMessage] = useState("Upload gambar untuk memulai.");
   const [progress, setProgress] = useState(0);
   const [copied, setCopied] = useState(false);
 
@@ -34,15 +34,16 @@ export default function OCRWorkspace() {
 
   const validateFile = (selected: File) => {
     const allowed = ["image/png", "image/jpeg", "image/webp"];
+
     if (!allowed.includes(selected.type)) {
       setStatus("error");
-      setMessage("Please upload a valid JPG, PNG, or WebP image.");
+      setMessage("Silakan upload file JPG, PNG, atau WebP yang valid.");
       return false;
     }
 
     if (selected.size > 5 * 1024 * 1024) {
       setStatus("error");
-      setMessage("Image size must be under 5MB.");
+      setMessage("Ukuran gambar harus di bawah 5MB.");
       return false;
     }
 
@@ -61,7 +62,7 @@ export default function OCRWorkspace() {
     setProgress(0);
     setCopied(false);
     setStatus("ready");
-    setMessage("Image ready. Click scan to extract text.");
+    setMessage("Gambar siap. Klik scan untuk mengambil teks.");
   };
 
   const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -86,7 +87,7 @@ export default function OCRWorkspace() {
 
     try {
       setStatus("scanning");
-      setMessage("Scanning image... this may take a few seconds.");
+      setMessage("Sedang memindai gambar... tunggu sebentar.");
       setProgress(5);
 
       if (!workerRef.current) {
@@ -105,17 +106,18 @@ export default function OCRWorkspace() {
 
       setResultText(text.trim());
       setStatus("done");
-      setMessage("Text extracted successfully.");
+      setMessage("Teks berhasil diambil.");
       setProgress(100);
     } catch (error) {
       console.error(error);
       setStatus("error");
-      setMessage("Something went wrong while scanning the image.");
+      setMessage("Terjadi kesalahan saat memindai gambar.");
     }
   };
 
   const copyText = async () => {
     if (!resultText) return;
+
     try {
       await navigator.clipboard.writeText(resultText);
       setCopied(true);
@@ -123,7 +125,7 @@ export default function OCRWorkspace() {
     } catch (error) {
       console.error(error);
       setStatus("error");
-      setMessage("Failed to copy text.");
+      setMessage("Gagal menyalin teks.");
     }
   };
 
@@ -137,7 +139,7 @@ export default function OCRWorkspace() {
     setProgress(0);
     setCopied(false);
     setStatus("idle");
-    setMessage("Upload an image to get started.");
+    setMessage("Upload gambar untuk memulai.");
   };
 
   const downloadText = () => {
@@ -148,7 +150,7 @@ export default function OCRWorkspace() {
 
     const link = document.createElement("a");
     link.href = url;
-    link.download = "riftext-output.txt";
+    link.download = "hasil-riftext.txt";
     link.click();
 
     URL.revokeObjectURL(url);
@@ -158,9 +160,9 @@ export default function OCRWorkspace() {
     <section id="workspace" className="py-10 sm:py-16">
       <div className="container-shell">
         <div className="mb-8">
-          <h2 className="section-title">OCR Workspace</h2>
+          <h2 className="section-title">Ruang Kerja OCR</h2>
           <p className="section-desc">
-            Upload your image, scan the text, then edit and copy the result instantly.
+            Upload gambar, scan teksnya, lalu edit dan salin hasilnya dengan cepat.
           </p>
         </div>
 
@@ -168,11 +170,11 @@ export default function OCRWorkspace() {
           <div className="glass soft-border soft-shadow rounded-[28px] p-5 sm:p-6">
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <p className="text-sm font-semibold text-slate-900">Upload your image</p>
-                <p className="mt-1 text-sm text-slate-500">Supports JPG, PNG, and WebP</p>
+                <p className="text-sm font-semibold text-slate-900">Upload gambar</p>
+                <p className="mt-1 text-sm text-slate-500">Mendukung JPG, PNG, dan WebP</p>
               </div>
               <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
-                {status === "scanning" ? "Scanning" : "Ready"}
+                {status === "scanning" ? "Memindai" : "Siap"}
               </span>
             </div>
 
@@ -192,10 +194,9 @@ export default function OCRWorkspace() {
               {imageUrl ? (
                 <div className="w-full">
                   <div className="overflow-hidden rounded-2xl border border-blue-100 bg-white">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={imageUrl}
-                      alt="Uploaded preview"
+                      alt="Pratinjau gambar yang diunggah"
                       className="h-72 w-full object-contain bg-slate-50"
                     />
                   </div>
@@ -207,9 +208,11 @@ export default function OCRWorkspace() {
                     ⤴
                   </div>
                   <p className="text-lg font-semibold text-slate-900">
-                    Drag &amp; drop an image here
+                    Tarik &amp; lepas gambar di sini
                   </p>
-                  <p className="mt-2 text-sm text-slate-500">or click to browse from your device</p>
+                  <p className="mt-2 text-sm text-slate-500">
+                    atau klik untuk memilih dari perangkat
+                  </p>
                 </>
               )}
             </label>
@@ -217,7 +220,9 @@ export default function OCRWorkspace() {
             <div className="mt-5">
               <div className="mb-3 flex items-center justify-between text-sm">
                 <span className="text-slate-600">{message}</span>
-                {status === "scanning" && <span className="font-medium text-blue-700">{progress}%</span>}
+                {status === "scanning" && (
+                  <span className="font-medium text-blue-700">{progress}%</span>
+                )}
               </div>
 
               <div className="h-2 w-full overflow-hidden rounded-full bg-blue-100">
@@ -234,21 +239,21 @@ export default function OCRWorkspace() {
                 disabled={!file || status === "scanning"}
                 className="rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
               >
-                {status === "scanning" ? "Scanning..." : "Scan Text"}
+                {status === "scanning" ? "Memindai..." : "Scan teks"}
               </button>
 
               <button
                 onClick={() => inputRef.current?.click()}
                 className="rounded-xl border border-blue-100 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
               >
-                Choose File
+                Pilih file
               </button>
 
               <button
                 onClick={clearAll}
                 className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-900"
               >
-                Clear
+                Hapus
               </button>
             </div>
           </div>
@@ -256,9 +261,9 @@ export default function OCRWorkspace() {
           <div className="glass soft-border soft-shadow rounded-[28px] p-5 sm:p-6">
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <p className="text-sm font-semibold text-slate-900">Extracted Text</p>
+                <p className="text-sm font-semibold text-slate-900">Teks hasil ekstraksi</p>
                 <p className="mt-1 text-sm text-slate-500">
-                  Edit the output before copying or downloading
+                  Edit hasilnya sebelum disalin atau diunduh
                 </p>
               </div>
 
@@ -268,14 +273,14 @@ export default function OCRWorkspace() {
                   disabled={!resultText}
                   className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  {copied ? "Copied!" : "Copy Text"}
+                  {copied ? "Tersalin!" : "Salin teks"}
                 </button>
                 <button
                   onClick={downloadText}
                   disabled={!resultText}
                   className="rounded-xl border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  Download .txt
+                  Unduh .txt
                 </button>
               </div>
             </div>
@@ -283,13 +288,13 @@ export default function OCRWorkspace() {
             <textarea
               value={resultText}
               onChange={(e) => setResultText(e.target.value)}
-              placeholder="Your extracted text will appear here..."
+              placeholder="Teks hasil scan akan muncul di sini..."
               className="min-h-[380px] w-full rounded-[24px] border border-blue-100 bg-white px-4 py-4 text-sm leading-7 text-slate-700 outline-none transition focus:border-blue-300 focus:ring-4 focus:ring-blue-100"
             />
 
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-500">
-              <span>{resultText.length} characters</span>
-              <span>{resultText.trim() ? resultText.trim().split(/\s+/).length : 0} words</span>
+              <span>{resultText.length} karakter</span>
+              <span>{resultText.trim() ? resultText.trim().split(/\s+/).length : 0} kata</span>
             </div>
           </div>
         </div>
