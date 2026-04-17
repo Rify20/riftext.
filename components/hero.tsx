@@ -13,7 +13,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-5 max-w-xl text-lg leading-8 text-slate-600">
-              RifText adalah web OCR modern yang membantu kamu mengambil teks dari
+              RifText adalah web yang membantu kamu mengambil teks dari
               screenshot, catatan, dan gambar dokumen dalam satu alur yang cepat dan rapi.
             </p>
 
@@ -29,15 +29,6 @@ export default function Hero() {
                 Upload gambar
               </a>
             </div>
-
-            <div className="mt-10 flex flex-wrap gap-3 text-sm text-slate-600">
-              <span className="rounded-full border border-blue-100 bg-white px-3 py-1">
-              </span>
-              <span className="rounded-full border border-blue-100 bg-white px-3 py-1">
-              </span>
-              <span className="rounded-full border border-blue-100 bg-white px-3 py-1">
-              </span>
-            </div>
           </div>
 
           <div className="grid-pattern relative rounded-[28px] border border-blue-100 bg-white/70 p-5 shadow-[0_30px_80px_rgba(37,99,235,0.10)]">
@@ -45,11 +36,9 @@ export default function Hero() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-semibold text-slate-900">Pemindai RifText</p>
-                  <p className="mt-1 text-sm text-slate-500">
-                  </p>
+                  <p className="mt-1 text-sm text-slate-500"></p>
                 </div>
-                <div className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
-                </div>
+                <div className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700"></div>
               </div>
 
               <div className="mt-6 rounded-2xl border border-dashed border-blue-200 bg-gradient-to-b from-blue-50 to-white p-6">
