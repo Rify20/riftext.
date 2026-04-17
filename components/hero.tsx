@@ -28,14 +28,6 @@ export default function Hero() {
               >
                 Upload gambar
               </a>
-              <a
-                href="https://github.com/Rify20"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-2xl border border-blue-100 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
-              >
-                Lihat GitHub
-              </a>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-3 text-sm text-slate-600">
