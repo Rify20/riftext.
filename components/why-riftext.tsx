@@ -1,17 +1,17 @@
 const features = [
   {
-    title: "Fast OCR",
-    desc: "Extract text from screenshots, notes, and simple document images in seconds.",
-    icon: "⚡",
+    title: "Salin Cepat",
+    desc: "Ambil teks dari screenshot, catatan, dan gambar dokumen sederhana dalam hitungan detik.",
+    icon: "⚡",a
   },
   {
-    title: "Clean Editing",
-    desc: "Review the output inside a large editable workspace before using it anywhere.",
+    title: "Mudah Diedit",
+    desc: "Tinjau dan edit hasil ekstraksi di area kerja yang besar sebelum dipakai di mana saja.",
     icon: "✎",
   },
   {
-    title: "Copy Instantly",
-    desc: "Copy the result with one click or download it as a text file for later.",
+    title: "Salin Instan",
+    desc: "Salin hasil dengan satu klik atau unduh sebagai file teks untuk dipakai nanti.",
     icon: "⧉",
   },
 ];
@@ -20,9 +20,9 @@ export default function WhyRifText() {
   return (
     <section id="features" className="py-14 sm:py-20">
       <div className="container-shell">
-        <h2 className="section-title">Why RifText</h2>
+        <h2 className="section-title">Kenapa RifText</h2>
         <p className="section-desc">
-          A simple OCR tool with a polished workflow and a modern blue-white interface.
+          sederhana dengan alur yang rapi.
         </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
