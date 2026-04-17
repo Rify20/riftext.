@@ -5,16 +5,20 @@ export default function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <div className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700">
-              Built by RifDev
+              Dibuat oleh RifDev
             </div>
 
             <h1 className="mt-6 max-w-2xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-              Turn images into editable text in seconds
+              Ubah gambar menjadi teks dalam hitungan detik
             </h1>
 
             <p className="mt-5 max-w-xl text-lg leading-8 text-slate-600">
-              RifText is a clean and modern OCR web app that helps you extract text
-              from screenshots, notes, and document images with one smooth workflow.
+              RifText adalah web OCR modern yang membantu kamu mengambil teks dari
+              screenshot, catatan, dan gambar dokumen dalam satu alur yang cepat dan rapi.
+            </p>
+
+            <p className="mt-3 text-sm text-slate-500">
+              Ikuti developer di Instagram @rifdev_
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -22,27 +26,24 @@ export default function Hero() {
                 href="#workspace"
                 className="rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-xl shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700"
               >
-                Upload Image
+                Upload gambar
               </a>
               <a
-                href="https://github.com/"
+                href="https://github.com/Rify20"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-2xl border border-blue-100 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
               >
-                View GitHub
+                Lihat GitHub
               </a>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-3 text-sm text-slate-600">
               <span className="rounded-full border border-blue-100 bg-white px-3 py-1">
-                OCR in browser
               </span>
               <span className="rounded-full border border-blue-100 bg-white px-3 py-1">
-                Copy instantly
               </span>
               <span className="rounded-full border border-blue-100 bg-white px-3 py-1">
-                Blue-white elegant UI
               </span>
             </div>
           </div>
@@ -51,13 +52,11 @@ export default function Hero() {
             <div className="glass soft-border soft-shadow rounded-[24px] p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-semibold text-slate-900">RifText Scanner</p>
+                  <p className="text-sm font-semibold text-slate-900">Pemindai RifText</p>
                   <p className="mt-1 text-sm text-slate-500">
-                    Elegant OCR workspace for fast text extraction
                   </p>
                 </div>
                 <div className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
-                  Live Demo
                 </div>
               </div>
 
@@ -67,24 +66,24 @@ export default function Hero() {
                     ✦
                   </div>
                   <p className="text-base font-semibold text-slate-900">
-                    Drag &amp; drop your image
+                    Tarik &amp; lepas gambarmu
                   </p>
                   <p className="mt-1 text-sm text-slate-500">
-                    PNG, JPG, or WebP supported
+                    Mendukung PNG, JPG, dan WebP
                   </p>
                   <button className="mt-5 rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white">
-                    Choose File
+                    Pilih file
                   </button>
                 </div>
               </div>
 
               <div className="mt-5 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-blue-100 bg-white p-4">
-                  <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Preview</p>
+                  <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Pratinjau</p>
                   <div className="mt-3 h-28 rounded-xl bg-slate-100" />
                 </div>
                 <div className="rounded-2xl border border-blue-100 bg-white p-4">
-                  <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Output</p>
+                  <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Hasil</p>
                   <div className="mt-3 h-28 rounded-xl bg-slate-100" />
                 </div>
               </div>
