@@ -4,13 +4,11 @@ export default function Footer() {
       <div className="container-shell flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
         <div>
           <p className="text-lg font-bold tracking-tight text-slate-900">RifText</p>
-
           <p className="mt-1 text-sm text-slate-600">
-            Extract text from images instantly.
+            Ubah gambar menjadi teks secara instan.
           </p>
-
           <p className="mt-1 text-sm text-slate-600">
-            Built by <span className="font-semibold text-blue-700">RifDev</span>
+            Dibuat oleh <span className="font-semibold text-blue-700">RifDev</span>
           </p>
         </div>
 
@@ -21,7 +19,6 @@ export default function Footer() {
             rel="noreferrer"
             className="transition hover:text-blue-600"
           >
-            GitHub
           </a>
 
           <a
