@@ -2,7 +2,7 @@ const features = [
   {
     title: "Salin Cepat",
     desc: "Ambil teks dari screenshot, catatan, dan gambar dokumen sederhana dalam hitungan detik.",
-    icon: "⚡",a
+    icon: "⚡",
   },
   {
     title: "Mudah Diedit",
