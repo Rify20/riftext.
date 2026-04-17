@@ -2,11 +2,38 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "RifText — Image to Text OCR by RifDev",
+  metadataBase: new URL("https://riftext.vercel.app"),
+  title: "RifText by RifDev",
   description:
-    "Modern blue-white OCR web app to extract text from images instantly. Built by RifDev.",
+    "RifText adalah web untuk mengambil teks dari gambar secara cepat, rapi, dan langsung bisa disalin.",
   applicationName: "RifText",
-  keywords: ["OCR", "image to text", "RifText", "RifDev", "Next.js", "Tesseract.js"],
+  keywords: [
+    "",
+    "gambar ke teks",
+    "image to text",
+    "extract text from image",
+    "RifText",
+    "RifDev"
+  ],
+  authors: [{ name: "RifDev", url: "https://www.instagram.com/rifdev_/" }],
+  creator: "RifDev",
+  publisher: "RifDev",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "RifText — Ubah Gambar Menjadi Teks",
+    description:
+      "Ambil teks dari gambar dengan cepat, rapi, dan langsung bisa disalin.",
+    url: "https://riftext.vercel.app",
+    siteName: "RifText",
+    locale: "id_ID",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -15,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="id">
       <body>{children}</body>
     </html>
   );
